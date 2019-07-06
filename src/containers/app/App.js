@@ -12,17 +12,25 @@ class App extends Component {
    constructor() {
       super();
       this.state = {
-         apps: [],
+         apps: applications,
          searchfield: ''
       }
    }
+   onSearchEvent = (event) => {
+      this.setState({ searchfield: event.target.value });
+
+   }
 
    render() {
+      const {apps, searchfield} = this.state;
+      const filteredApps = apps.filter(app => {
+         return app.name.toLowerCase().includes(searchfield.toLowerCase())
+      });
       return (
-         <div className='tc pa5'>
-            <div className='pageTitle'> Account Manager </div>
-            <SearchBox />
-            <AppList apps = {applications} />
+         <div className = 'pa5'>
+            <div className = 'pageTitle tc'> Account Manager </div>
+            <SearchBox searchChange = {this.onSearchEvent} />
+            <AppList apps = {filteredApps} />
          </div>
       )
    };

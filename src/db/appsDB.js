@@ -49,7 +49,7 @@ export const applications = [
    },
    {
       id:         12,
-      name:       'Lineage II',
+      name:       'Spotify',
    },
    {
       id:         13,
@@ -65,6 +65,6 @@ export const applications = [
    },
    {
       id:         16,
-      name:       'Spotify',
+      name:       'Lineage II',
    }
 ];

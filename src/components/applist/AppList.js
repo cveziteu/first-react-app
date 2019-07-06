@@ -3,7 +3,7 @@ import Card from '../card/Card';
 
 const AppList = ({ apps }) => {
    return (
-      <div>
+      <div className = 'tc'>
          {
            apps.map((app, i) => {
              return (
