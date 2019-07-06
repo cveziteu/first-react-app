@@ -1,17 +1,17 @@
 import React from 'react';
 import Card from '../card/Card';
 
-const CardList = ({ cards }) => {
+const AppList = ({ apps }) => {
    return (
       <div>
          {
-           cards.map((card, i) => {
+           apps.map((app, i) => {
              return (
                <Card
                  key    =  {i}
-                 id     =  {cards[i].id}
-                 name   =  {cards[i].name}
-                 image  =  {cards[i].image}
+                 id     =  {apps[i].id}
+                 name   =  {apps[i].name}
+                 image  =  {apps[i].image}
                  />
              );
            })
@@ -20,4 +20,4 @@ const CardList = ({ cards }) => {
    );
 };
 
-export default CardList;
+export default AppList;

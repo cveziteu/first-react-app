@@ -1,20 +1,31 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './App.css';
 
-import CardList from '../../components/cardlist/CardList';
-import {cards} from '../../db/cardsDB';
+import AppList from '../../components/applist/AppList';
+import {applications} from '../../db/appsDB';
 
 import SearchBox from '../../components/searchbox/SearchBox';
 
 
-const App = () => {
-   return (
-      <div className='tc pa5'>
-         <div className='pageTitle'> Account Manager </div>
-         <SearchBox />
-         <CardList cards = {cards} />
-      </div>
-   );
+class App extends Component {
+
+   constructor() {
+      super();
+      this.state = {
+         apps: [],
+         searchfield: ''
+      }
+   }
+
+   render() {
+      return (
+         <div className='tc pa5'>
+            <div className='pageTitle'> Account Manager </div>
+            <SearchBox />
+            <AppList apps = {applications} />
+         </div>
+      )
+   };
 };
 
 export default App;
