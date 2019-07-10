@@ -6,6 +6,7 @@ import {applications} from '../../db/appsDB';
 
 import SearchBox from '../../components/searchbox/SearchBox';
 
+import ErrorBoundry from '../../components/errorboundry/ErrorBoundry';
 
 class App extends Component {
 
@@ -16,6 +17,7 @@ class App extends Component {
          searchfield: ''
       }
    }
+
    onSearchEvent = (event) => {
       this.setState({ searchfield: event.target.value });
 
@@ -30,7 +32,9 @@ class App extends Component {
          <div className = 'pa5'>
             <div className = 'pageTitle tc'> Account Manager </div>
             <SearchBox searchChange = {this.onSearchEvent} />
-            <AppList apps = {filteredApps} />
+            <ErrorBoundry>
+               <AppList apps = {filteredApps} />
+            </ErrorBoundry>
          </div>
       )
    };
